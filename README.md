@@ -93,11 +93,11 @@ data<-mutate(data, activity = Labels1$V2)
 ```
 ###Calculate the mean of each variable grouped by the activity and subject:
 ```
-m<-aggregate( data[,3:68], data[,1:2], FUN = mean)
+tidy_data<-aggregate( data[,3:68], data[,1:2], FUN = mean)
 ```
 ###Write text file to working directory with final tidy dataset:
 ```
-write.table(m, "tidy_data.txt", sep = ",", row.name=FALSE)
+write.table(tidy_data, "tidy_data.txt", sep = ",", row.name=FALSE)
 ```
 ##Output
 The final output is a tidy dataset that is stored as a .txt file in your working directory. Each measured variable is in one column and each different observation of that variable is in a different row.
