@@ -34,7 +34,7 @@ The following files in the zip folder were used in the project and must be store
 
 ##Process
 1. Read in test data
-2. Read in train data
+2. Read in training data
 3. Combine individual data sets
 4. Create descriptive names
 5. Combine individual data sets to master data set
@@ -51,13 +51,13 @@ xtest<- read.table("X_test.txt")
 ytest<- read.table("y_test.txt")
 subjecttest<- read.table("subject_test.txt")
 ```
-###Read in train data:
+###Read in training data:
 ```
 xtrain<- read.table("X_train.txt")
 ytrain<- read.table("y_train.txt")
 subject<- read.table("subject_train.txt")
 ```
-###Combine test and train data for Subject, Activity and Features:
+###Combine test and training data for Subject, Activity and Features:
 ```
 Subject <- rbind(subject, subjecttest)
 Activity<- rbind(ytrain, ytest)
