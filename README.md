@@ -99,3 +99,5 @@ m<-aggregate( data[,3:68], data[,1:2], FUN = mean)
 ```
 write.table(m, "tidy_data.txt", sep = ",", row.name=FALSE)
 ```
+##Output
+The final output is a tidy dataset that is stored as a .txt file in your working directory. Each measured variable is in one column and each different observation of that variable is in a different row.
