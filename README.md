@@ -1,7 +1,7 @@
 # Getting and Cleaning Data Course Project
 
 ##Overview
-The data is based on experiments that have been carried out with a group of 30 volunteers. Each volunteer performed six activities while wearing a smartphone on their waist. Using its embedded accelerometer and gyroscope, the expirment captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.  
+The data is based on experiments that have been carried out with a group of 30 volunteers. Each volunteer performed six activities while wearing a smartphone on their waist. Using its embedded accelerometer and gyroscope, the experiment captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.  
 A full description of the study can be found here:
 <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
 ##Objective
