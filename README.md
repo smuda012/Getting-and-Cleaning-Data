@@ -40,22 +40,62 @@ The following files in the zip folder were used in the project and must be store
 5. Combine individual data sets to master data set
 6. Extract feature names that are calculating either the mean or standard deviation
 7. Subset the data set based on the extracted names
-8. Read in Activity labels and replace the original activity column with the descriptive activity names
+8. Read in Activity labels and replace the original activity data with the descriptive activity names
 9. Calculate the mean of each variable grouped by the activity and subject
 10. Write text file with final tidy dataset
 
 
 ###Read in test data
-```xtest<- read.table("X_test.txt")
+```
+xtest<- read.table("X_test.txt")
 ytest<- read.table("y_test.txt")
 subjecttest<- read.table("subject_test.txt")
-
-Read in train data
-Combine individual data sets
-Create descriptive names
-Combine individual data sets to master data set
-Extract feature names that are calculating either the mean or standard deviation
-Subset the data set based on the extracted names
-Read in Activity labels and replace the original activity column with the descriptive activity names
-Calculate the mean of each variable grouped by the activity and subject
-Write text file with final tidy dataset
+```
+###Read in train data
+```
+xtrain<- read.table("X_train.txt")
+ytrain<- read.table("y_train.txt")
+subject<- read.table("subject_train.txt")
+```
+###Combine test and train data for Subject, Activity and Features
+```
+Subject <- rbind(subject, subjecttest)
+Activity<- rbind(ytrain, ytest)
+Features<- rbind(xtrain, xtest)
+```
+###Create descriptive names
+```
+names(Subject)<-c("subject")
+names(Activity)<- c("activity")
+FeaturesNames <- read.table(("features.txt"),head=FALSE)
+names(Features)<- FeaturesNames$V2
+```
+###Combine individual data sets to create a master data set
+```
+combine <- cbind(Subject, Activity)
+data <- cbind(combine, Features)
+```
+###Extract feature names that are calculating either the mean or standard deviation
+```
+onlyFeaturesNames<-FeaturesNames$V2[grep("-(mean|std)\\(\\)", FeaturesNames$V2)]
+selectedNames<-c( "subject", "activity",as.character(onlyFeaturesNames))
+```
+###Subset the data set based on the extracted names
+```
+library(dplyr)
+data<-subset(data,select=selectedNames)
+```
+###Read in Activity labels and replace the original activity data with the descriptive activity names
+```
+Labels <- read.table("activity_labels.txt",header = FALSE)
+Labels1<- inner_join(data, Labels, by = c("activity" = "V1"))[,68:69]
+data<-mutate(data, activity = Labels1$V2)
+```
+###Calculate the mean of each variable grouped by the activity and subject
+```
+m<-aggregate( data[,3:68], data[,1:2], FUN = mean)
+```
+###Write text file to working directory with final tidy dataset
+```
+write.table(m, "tidy_data.txt", sep = ",", row.name=FALSE)
+```
