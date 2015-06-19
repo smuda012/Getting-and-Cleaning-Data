@@ -41,7 +41,7 @@ Labels1<- inner_join(data, Labels, by = c("activity" = "V1"))[,68:69]
 data<-mutate(data, activity = Labels1$V2)
 
 #calculate the mean of each variable grouped by the activity and subject
-m<-aggregate( data[,3:68], data[,1:2], FUN = mean )
+tidy_data<-aggregate( data[,3:68], data[,1:2], FUN = mean )
 
 #write text file with final tidy dataset
-write.table(m, "tidy_data.txt", row.name=FALSE)
+write.table(tidy_data, "tidy_data.txt", row.name=FALSE)
