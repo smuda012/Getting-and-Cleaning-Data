@@ -1,5 +1,5 @@
-#Codebook
-##Descriptions and Stats about variables in tidy_data.txt
+##Codebook
+###Descriptions and Stats about variables in tidy_data.txt
 
 =============================================================================================================================
 
