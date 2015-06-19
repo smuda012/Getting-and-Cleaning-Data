@@ -1,10 +1,10 @@
 # Getting and Cleaning Data Course Project
 
-###Overview
+##Overview
 The data is based on experiments that have been carried out with a group of 30 volunteers. Each volunteer performed six activities while wearing a smartphone on their waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.  
 A full description of the study can be found here:
 <http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
-###Objective
+##Objective
 From the course assignment page:  
 <https://class.coursera.org/getdata-015/human_grading/view/courses/973502/assessments/3/submissions>
 
@@ -15,7 +15,7 @@ You should create one R script called run_analysis.R that does the following:
 * Appropriately labels the data set with descriptive variable names. 
 * From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-###Data Sources 
+##Data Sources 
 The data for this project is here:  
 <https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip>  
 The following files in the zip folder were used in the project and must be stored in your working directory for the run_analsis.R script to execute:  
@@ -32,7 +32,7 @@ The following files in the zip folder were used in the project and must be store
 
 
 
-###Process
+##Process
 1. Read in test data
 2. Read in train data
 3. Combine individual data sets
