@@ -1,9 +1,12 @@
 # Getting and Cleaning Data Course Project
 
 ###Overview
+The data is based on experiments that have been carried out with a group of 30 volunteers. Each volunteer performed six activities while wearing a smartphone on their waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data.  
+A full description of the study can be found here:
+<http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones>
+###Objective
 From the course assignment page:  
 <https://class.coursera.org/getdata-015/human_grading/view/courses/973502/assessments/3/submissions>
-  
 
 You should create one R script called run_analysis.R that does the following:  
 * Merges the training and the test sets to create one data set.
@@ -26,8 +29,33 @@ The following files in the zip folder were used in the project and must be store
 * 'train/subject_test.txt': Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30.
 
 
-###Understanding the Data
-The data is based on exeriments that have been carried out with a group of 30 volunteers. Each volunteer performed six activities while wearing a smartphone on their waist
 
-###Output
 
+
+###Process
+1. Read in test data
+2. Read in train data
+3. Combine individual data sets
+4. Create descriptive names
+5. Combine individual data sets to master data set
+6. Extract feature names that are calculating either the mean or standard deviation
+7. Subset the data set based on the extracted names
+8. Read in Activity labels and replace the original activity column with the descriptive activity names
+9. Calculate the mean of each variable grouped by the activity and subject
+10. Write text file with final tidy dataset
+
+
+###Read in test data
+```xtest<- read.table("X_test.txt")
+ytest<- read.table("y_test.txt")
+subjecttest<- read.table("subject_test.txt")
+
+Read in train data
+Combine individual data sets
+Create descriptive names
+Combine individual data sets to master data set
+Extract feature names that are calculating either the mean or standard deviation
+Subset the data set based on the extracted names
+Read in Activity labels and replace the original activity column with the descriptive activity names
+Calculate the mean of each variable grouped by the activity and subject
+Write text file with final tidy dataset
